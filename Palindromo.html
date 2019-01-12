@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Esto es un Palindromo</title>
+  </head>
+  <body>
+    <h1>PALINDROMO</h1>
+    <p>Ingrese una palabra y verificaquermos si es palindromo</p>
+    <input type="text" id="textoo" />
+    <input type="button" id="pain" value="OK" />
+    <br>
+    <p id="resultado"></p>
+    <script type="text/javascript">
+      var a = document.getElementById("pain");
+      var b = document.getElementById("textoo");
+      a.addEventListener("click", clickeado);
+
+      function clickeado(){
+        var xxx = [];
+        var y = b.value["length"];
+
+        for (var i=0; i<y; i++){
+          xxx += (b.value[y-i-1]);
+        }
+      console.log(xxx);
+      var z= xxx === b.value;
+      document.getElementById("resultado").innerHTML = "Tu Palindromo es <strong>" + z;
+      }
+    </script>
+  </body>
+</html>
