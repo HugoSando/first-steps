@@ -7,25 +7,25 @@
   <body>
     <h1>PALINDROMO</h1>
     <p>Ingrese una palabra y verificaquermos si es palindromo</p>
-    <input type="text" id="textoo" />
-    <input type="button" id="pain" value="OK" />
+    <input type="text" id="texto" />
+    <input type="button" id="boton" value="OK" />
     <br>
     <p id="resultado"></p>
     <script type="text/javascript">
-      var a = document.getElementById("pain");
-      var b = document.getElementById("textoo");
-      a.addEventListener("click", clickeado);
+      var boton = document.getElementById("boton");
+      var texto = document.getElementById("texto");
+      boton.addEventListener("click", clickeado);
 
       function clickeado(){
-        var xxx = [];
-        var y = b.value["length"];
+        var invertida;
+        var longitud = texto.value["length"];
 
-        for (var i=0; i<y; i++){
-          xxx += (b.value[y-i-1]);
+        for (var i=0; i<longitud; i++){
+          invertida += texto.value[longitud-i-1];
         }
-      console.log(xxx);
-      var z= xxx === b.value;
-      document.getElementById("resultado").innerHTML = "Tu Palindromo es <strong>" + z;
+      console.log(invertida);
+      var validacion = invertida === texto.value;
+      document.getElementById("resultado").innerHTML = "Tu Palindromo es <strong>" + validacion;
       }
     </script>
   </body>
