@@ -26,4 +26,8 @@ function dibujarlinea(color, xi, yi, xf, yf, lienzo)
   lienzo.closePath();
 }
 
+dibujarlinea("black", 1, 1, 1, 599, papel);
+dibujarlinea("black", 1, 599, 599, 599, papel);
+dibujarlinea("black", 599, 599, 599, 1, papel);
+dibujarlinea("black", 599, 1, 1, 1, papel);
 dibujarlinea(colorcito, 300, 300, 301, 301, papel);
