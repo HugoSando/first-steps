@@ -1,6 +1,53 @@
 var vp = document.getElementById("villaplatzi");
 var papel = vp.getContext("2d");
 
+var x = 700;
+var y = 0;
+var movement = 20;
+var teclas = {
+  UP: 38,
+  DOWN: 40,
+  LEFT: 37,
+  RIGHT: 39
+};
+
+document.addEventListener("keydown", dibujarTeclado);
+
+function dibujarTeclado(evento)
+{
+  switch (evento.keyCode) {
+    case teclas.UP:
+      y-= movement;
+      dibujar()
+    break;
+    case teclas.DOWN:
+      y+= movement;
+      dibujar()
+    break;
+    case teclas.LEFT:
+      x-= movement;
+      dibujar()
+    break;
+    case teclas.RIGHT:
+      x+= movement;
+      dibujar()
+    break;
+
+    default:
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 var fondo = {
   url: "forest.png",
   cargaOk: false
@@ -17,6 +64,9 @@ var bird3 = {
   url: "bird3.png",
   cargaOk: false
 };
+var aguila = {
+  url: "aguila.png",
+}
 
 bird1.objeto = new Image();
 bird1.objeto.src = bird1.url;
@@ -34,6 +84,8 @@ fondo.objeto = new Image();
 fondo.objeto.src = fondo.url;
 fondo.objeto.addEventListener("load", cargarFondo);
 
+aguila.objeto = new Image();
+aguila.objeto.src = aguila.url;
 
 function cargarFondo()
 {
@@ -56,8 +108,10 @@ function db3()
   dibujar();
 }
 
-var cantidad = aleatorio(1, 10);
+
+var cantidad = aleatorio(1, 5);
 console.log(cantidad);
+
 
 function dibujar()
 {
@@ -66,21 +120,22 @@ function dibujar()
   }
   for (var i=0; i<cantidad; i++){
     if (bird1.cargaOk){
-      var x = aleatorio(0, 700)
-      var y = aleatorio(0, 420)
-      papel.drawImage(bird1.objeto, x, y, 80, 80);
+      var x1 = aleatorio(0, 9)
+      var y1 = aleatorio(0, 5)
+      papel.drawImage(bird1.objeto, (x1*80), (y1*80), 80, 80);
     }
     if (bird2.cargaOk){
-      var x = aleatorio(0, 700)
-      var y = aleatorio(0, 420)
-      papel.drawImage(bird2.objeto, x, y, 80, 80);
+      var x2 = aleatorio(0, 9)
+      var y2 = aleatorio(0, 5)
+      papel.drawImage(bird2.objeto, (x2*80), (y2*80), 80, 80);
     }
     if (bird3.cargaOk){
-      var x = aleatorio(0, 700)
-      var y = aleatorio(0, 420)
-      papel.drawImage(bird3.objeto, x, y, 80, 80);
+      var x3 = aleatorio(0, 9)
+      var y3 = aleatorio(0, 5)
+      papel.drawImage(bird3.objeto, (x3*80), (y3*80), 80, 80);
     }
   }
+  papel.drawImage(aguila.objeto, x, y, 150, 150);
 }
 
 
