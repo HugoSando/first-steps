@@ -38,16 +38,6 @@ function dibujarTeclado(evento)
 }
 
 
-
-
-
-
-
-
-
-
-
-
 var fondo = {
   url: "forest.png",
   cargaOk: false
